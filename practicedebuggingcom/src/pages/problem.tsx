@@ -11,7 +11,7 @@ export default function Problem() {
                 </div>
             </div>
             <div className="w-1/3 border mr-[5%] bg-gray-200">
-                <ProblemDesc name='Problem 1' description="This is a syntax issue. Try to use your skills to solve this problem. Refer to the syntax learning page if stuck. Remember that in a real situation you will not be able to always see test cases." difficulty="Hard"/>
+                <ProblemDesc name='Problem 1' description="This is a syntax issue. Try to use your skills to solve this problem. Refer to the syntax learning page if stuck. Remember that in a real situation you will not be able to always see test cases." difficulty="Hard" hints={['What are the syntax components of a for loop']}/>
             </div>
         </div>
     );

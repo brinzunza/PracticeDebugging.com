@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 interface ProblemCardProps {
     name: string;
     difficulty: 'Easy' | 'Medium' | 'Hard';
@@ -6,6 +8,8 @@ interface ProblemCardProps {
 }
 
 export default function ProblemCard({ name, difficulty, passed, languages }: ProblemCardProps) {
+    const navigate = useNavigate();
+
     const difficultyColor = {
         Easy: 'text-green-500',
         Medium: 'text-orange-500',
@@ -25,6 +29,7 @@ export default function ProblemCard({ name, difficulty, passed, languages }: Pro
                         <button 
                             key={index}
                             className="underline cursor-default hover:text-blue-500"
+                            onClick={() => navigate(`/problem`)}
                         >
                             {language}
                         </button>

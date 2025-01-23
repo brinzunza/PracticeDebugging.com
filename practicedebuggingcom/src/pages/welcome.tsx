@@ -27,8 +27,8 @@ export default function Welcome() {
                     <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_4.7s_forwards]" onClick={() => navigate("/about")}>
                         About
                     </button>
-                    <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_5.2s_forwards]">Learn</button>
-                    <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_5.7s_forwards]">Practice</button>
+                    <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_5.2s_forwards]" onClick={() => navigate("/learn")}>Learn</button>
+                    <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_5.7s_forwards]" onClick={() => navigate("/practice")}>Practice</button>
                 </div>
             </div>
         </div>
