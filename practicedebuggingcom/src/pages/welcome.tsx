@@ -1,9 +1,8 @@
 "use client";
 
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function Welcome() {
-    const navigate = useNavigate();
+const Welcome: React.FC = () => {
     return (
         <div className="flex flex-col items-center justify-center h-[90vh] -mt-10 text-3xl cursor-default">
             <div className="flex flex-col items-center gap-16">
@@ -24,13 +23,15 @@ export default function Welcome() {
                     </div>
                 </div>
                 <div className="flex justify-between w-full text-xl">
-                    <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_4.7s_forwards]" onClick={() => navigate("/about")}>
+                    <Link className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_2.7s_forwards]" to={`/about`}>
                         About
-                    </button>
-                    <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_5.2s_forwards]" onClick={() => navigate("/learn")}>Learn</button>
-                    <button className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_5.7s_forwards]" onClick={() => navigate("/practice")}>Practice</button>
+                    </Link>
+                    <Link className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_3.2s_forwards]" to={`/learn`}>Learn</Link>
+                    <Link className="opacity-0 underline decoration-[1.5px] cursor-default hover:text-blue-500 animate-[slideUp_1.0s_ease-out_3.7s_forwards]" to={`/practice`}>Practice</Link>
                 </div>
             </div>
         </div>
     );
 }
+
+export default Welcome;

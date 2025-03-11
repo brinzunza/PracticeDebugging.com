@@ -1,14 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+
+import { Link } from "react-router-dom";
 
 interface ProblemCardProps {
+    key: number;
     name: string;
     difficulty: 'Easy' | 'Medium' | 'Hard';
     passed: boolean;
     languages: string[];
 }
 
-export default function ProblemCard({ name, difficulty, passed, languages }: ProblemCardProps) {
-    const navigate = useNavigate();
+const ProblemCard: React.FC<ProblemCardProps> = ({ key, name, difficulty, passed, languages}) => {
 
     const difficultyColor = {
         Easy: 'text-green-500',
@@ -24,18 +25,14 @@ export default function ProblemCard({ name, difficulty, passed, languages }: Pro
                     <span className={`${difficultyColor}`}>{difficulty}</span>
                     {passed && <span className="text-green-500">Passed</span>}
                 </div>
-                <div className="flex gap-3">
-                    {languages.map((language, index) => (
-                        <button 
-                            key={index}
-                            className="underline cursor-default hover:text-blue-500"
-                            onClick={() => navigate(`/problem`)}
-                        >
-                            {language}
-                        </button>
+                <div>
+                    {languages.map((item) => (
+                        <Link to={`/problem/${key}`} key={key} className="ml-auto mx-[10] underline cursor-default hover:text-blue-500">{item}</Link>
                     ))}
                 </div>
             </div>
         </div>
     );
 }
+
+export default ProblemCard;

@@ -1,6 +1,15 @@
 import ProblemCard from "../components/problem_card";
+import React from "react"
+import { Link } from "react-router-dom";
 
 export default function Practice() {
+
+    const items = [
+        { id: 1, name: "Syntax", difficulty: "Easy" as const, passed: false, languages: ["Python", "Java"], title: "Syntax Issue", description: "This is a syntax problem, try and find what is wrong with it", hints: ["Look at for loop", "The answer is the colon"]},
+        { id: 2, name: "Different", difficulty: "Hard" as const, passed: true, languages: ["Python", "Java"], title: "Different Syntax", description: "This is a syntax problem, try and find what is wrong with it", hints: ["Look at for loop", "The answer is the colon"]},
+        { id: 3, name: "Same", difficulty: "Medium" as const, passed: false, languages: ["Python", "Java"], title: "Same Syntax", description: "This is a syntax problem, try and find what is wrong with it", hints: ["Look at for loop", "The answer is the colon"]},
+    ]
+
     return (
         <div className="mx-[200]">
             <h1 className="text-5xl">Dashboard</h1>
@@ -25,42 +34,15 @@ export default function Practice() {
                 </div>
             </div>
             <div>
-                <ProblemCard 
-                    name="Infinite Recursion" 
-                    difficulty="Easy"
-                    passed={true}
-                    languages={["Java", "Python"]}
-                />
-                <ProblemCard 
-                    name="API Misuse" 
-                    difficulty="Hard"
-                    passed={false}
-                    languages={["Java", "Python"]}
-                />
-                <ProblemCard 
-                    name="Infinite Recursion" 
-                    difficulty="Easy"
-                    passed={true}
-                    languages={["Java", "Python"]}
-                />
-                <ProblemCard 
-                    name="API Misuse" 
-                    difficulty="Hard"
-                    passed={false}
-                    languages={["Java", "Python"]}
-                />
-                <ProblemCard 
-                    name="Infinite Recursion" 
-                    difficulty="Easy"
-                    passed={true}
-                    languages={["Java", "Python"]}
-                />
-                <ProblemCard 
-                    name="API Misuse" 
-                    difficulty="Hard"
-                    passed={false}
-                    languages={["Java", "Python"]}
-                />
+                {items.map((item) => (
+                    <ProblemCard 
+                        key={item.id} 
+                        name={item.name} 
+                        difficulty={item.difficulty} 
+                        passed={item.passed} 
+                        languages={item.languages} 
+                    />
+                ))}
             </div>
         </div>
     );
