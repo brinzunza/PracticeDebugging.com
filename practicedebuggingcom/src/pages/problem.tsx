@@ -8,9 +8,9 @@ export default function Problem() {
     const problemData = {
         id: parseInt(id || "0"),
         name: "Syntax Issue",
-        title: "Syntax Issue",
         difficulty: "Easy",
         description: "This is a syntax problem",
+        code: "for i in range(10): \n     print('hi')",
         hints: ["Look at the code", "Check syntax"]
     };
 
